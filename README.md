@@ -6,9 +6,8 @@ For each item AA with rating RAR_A and item BB with rating RBR_B:
 
 1. **Expected score of A (probability A should win):**
 
-$$
-E_{A} = \frac{1}{ 1+ 10^{(R_{B}-R_{A})/400}}​
-$$
+$$E_{A} = \frac{1}{ 1+ 10^{(R_{B}-R_{A})/400}}​$$
+
 Similarly,
 
 $$
@@ -16,19 +15,18 @@ E_{B} = \frac{1}{ 1+ 10^{(R_{A}-R_{B})/400}}​
 $$
 
 
-Notice: $$
-E_{A} + E_{B} = 1
-$$
+Notice: 
+$$E_{A} + E_{B} = 1$$
 
 2. **Update after a match:**  
     If $S_{A}$ is the actual outcome for A (1 = win, 0 = loss, 0.5 = tie):
 
-$$
-R'_{A} = R_{A} + K \cdot(S_{A} - E_{A})
-$$
-$$
-R'_{B} = R_{B} + K \cdot(S_{B} - E_{B})
-$$
+$$R'_{A} = R_{A} + K \cdot(S_{A} - E_{A})$$
+
+
+$$R'_{B} = R_{B} + K \cdot(S_{B} - E_{B})$$
+
+
 Where:
 - $K$ = sensitivity constant (controls how fast ratings change). Common choices: 16, 24, 32.
 - If A wins: $S_{A}=1, S_{B}=0$
